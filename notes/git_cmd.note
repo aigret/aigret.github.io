@@ -33,3 +33,4 @@ $ git revert <commit>
 $ git reset --hard <commit>
 $ git reset <commit>
 $ git reset --keep <commit>
+
