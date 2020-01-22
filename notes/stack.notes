@@ -1,0 +1,38 @@
+My opinion would be to make sure you have everything committed on the current master, then create ard reset your local master to remote master. Then either rebase or cherry-pick those changes. Som
+
+git branch tmp-master
+git fetch origin
+git reset --hard origin/master
+
+Now you can use the following to easily visualize the differences between the two branches:
+
+git log --decorate=short --oneline --graph --all
+
+Cherry-picking the other commits and fixing conflicts as you go would probably be easiest, but you more specific steps, let me know and I'll write 'em up.
+
+Update:
+
+Now that you're here, you can try (from master):
+
+git merge tmp-master
+
+But for cleaner commit history you may want to try the following:
+
+git checkout tmp-master
+git rebase master
+git checkout master
+git merge --ff tmp-master
+git branch -d tmp-master
+git push origin master
+
+This will take your local commits and reapply them on top of the remote changes. Since you're esse two different machines, you probably don't want a lot of "well, switched machines again" merge co
+
+Now, there may be some possible conflicts. There are a couple ways to take care of those. If you hanges take priority then do the following (assumed from the tmp-master branch, and have conflicts
+
+git rebase --abort
+git branch tmp-master-save
+git rebase -X theirs master
+
+Then check if everything looks good continue from the step git checkout master above. Also remembe branch. Created it just for safe keeping. When you're new to this it's always better to have a sa
+
+
