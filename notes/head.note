@@ -1,0 +1,7 @@
+#show past 10 head pointer
+$git reflog show HEAD@{now} -10
+
+# save a hitory image to a different branch
+$git branch [new_branch] [address e.g. acbdf20] 
+
+$git checkout [new_branch]
