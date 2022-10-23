@@ -6,8 +6,8 @@
 - PDF is not relevant in the case of continuous distributions, but for a discrete random variable
 > [!info] 
 > The PDF, denoted $f$, of a continuous random variable $x$ satisfies the following:
-> 1. $f(x)\ge 0$, for all $x\in \mathbb{R}$
-> 2. $f$ is piecewise continuous
+> 1. $$f(x)\ge 0$, for all $x\in \mathbb{R}$$
+> 2. $$f$$ is piecewise continuous
 > 3. $\int_{-\infty}^\infty f(x)dx = 1$
 > 4. $P(a\le x\le b) = \int_b^a f(x)dx$
 
